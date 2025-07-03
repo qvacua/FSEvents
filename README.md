@@ -1,3 +1,10 @@
+This is a fork of <https://github.com/eonil/FSEvents> with the following changes:
+
+* Swift 6 compatible
+* Minimal macOS deployment target is macOS 13
+
+---
+
 EonilFSEvents
 =============================
 Eonil
