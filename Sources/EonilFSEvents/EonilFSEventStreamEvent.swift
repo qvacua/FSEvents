@@ -6,7 +6,7 @@
 //
 //
 
-public struct EonilFSEventsEvent {
+public struct EonilFSEventsEvent: Sendable {
   public var path: String
   public var flag: EonilFSEventsEventFlags?
   public var ID: EonilFSEventsEventID?

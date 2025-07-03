@@ -6,7 +6,7 @@
 //
 //
 
-public struct EonilFSEventsError: Error {
+public struct EonilFSEventsError: Error, Sendable {
   public var code: EonilFSEventsErrorCode
   public var message: String?
   init(code: EonilFSEventsErrorCode) {
@@ -19,7 +19,7 @@ public struct EonilFSEventsError: Error {
   }
 }
 
-public enum EonilFSEventsErrorCode {
+public enum EonilFSEventsErrorCode: Sendable {
   case cannotCreateStream
   case cannotStartStream
 }

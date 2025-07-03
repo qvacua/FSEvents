@@ -17,13 +17,13 @@ import Foundation
 ///     If you want to access all the options of "FSEvents",
 ///     use `EonilFSEvents` class directly.
 ///
+@MainActor
 public enum EonilFSEvents {
   public static func startWatching(
     paths: [String],
     for id: ObjectIdentifier,
-    with handler: @escaping (EonilFSEventsEvent) -> Void
+    with handler: @escaping @Sendable (EonilFSEventsEvent) -> Void
   ) throws {
-    assert(Thread.isMainThread)
     assert(watchers[id] == nil)
     // This is convenient wrapper for UI.
     // UI usually needs quicker response rather than maximum throughput.
@@ -52,4 +52,5 @@ public enum EonilFSEvents {
   }
 }
 
+@MainActor
 private var watchers = [ObjectIdentifier: EonilFSEventStream]()

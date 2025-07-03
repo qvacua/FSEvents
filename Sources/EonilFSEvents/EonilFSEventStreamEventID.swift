@@ -9,7 +9,7 @@
 import CoreServices
 import Foundation
 
-public struct EonilFSEventsEventID: Hashable, RawRepresentable {
+public struct EonilFSEventsEventID: Hashable, RawRepresentable, Sendable {
   public let rawValue: FSEventStreamEventId
   public init(rawValue: FSEventStreamEventId) {
     self.rawValue = rawValue

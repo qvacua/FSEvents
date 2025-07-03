@@ -28,7 +28,7 @@ import Foundation
  *    data model - and recognize that what is actually in the file system can
  *    change immediately after you check it.
  */
-public struct EonilFSEventsEventFlags: OptionSet {
+public struct EonilFSEventsEventFlags: OptionSet, Sendable {
   public let rawValue: FSEventStreamEventFlags
   public init(rawValue: FSEventStreamEventFlags) {
     self.rawValue = rawValue

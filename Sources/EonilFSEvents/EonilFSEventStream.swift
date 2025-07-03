@@ -17,10 +17,10 @@ import Foundation
 ///
 /// - TODO: Device watching support.
 ///
-public final class EonilFSEventStream {
+public final class EonilFSEventStream: @unchecked Sendable {
   // This must be a non-nil value if an instance of this class has been created successfully.
   private var rawref: FSEventStreamRef!
-  private let handler: (EonilFSEventsEvent) -> Void
+  private let handler: @Sendable (EonilFSEventsEvent) -> Void
 
   /*
    *  FSEventStreamCreate()
@@ -88,7 +88,7 @@ public final class EonilFSEventStream {
     sinceWhen: EonilFSEventsEventID,
     latency: TimeInterval,
     flags: EonilFSEventsCreateFlags,
-    handler: @escaping (EonilFSEventsEvent) -> Void
+    handler: @escaping @Sendable (EonilFSEventsEvent) -> Void
   ) throws {
     // `CoreServices.FSEventStreamCallback` is C callback and follows
     // C convention. Which means it cannot capture any external value.
@@ -308,7 +308,7 @@ public extension EonilFSEventStream {
 //     *    Non-Carbon CFM:   not available
 //     */
 //    extern CF_RETURNS_RETAINED CFUUIDRef __nullable
-//    FSEventsCopyUUIDForDevice(dev_t dev)                         
+//    FSEventsCopyUUIDForDevice(dev_t dev)
 //    __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_6_0);
 
 //    /*
@@ -347,7 +347,7 @@ public extension EonilFSEventStream {
 //    extern FSEventStreamEventId
 //    FSEventsGetLastEventIdForDeviceBeforeTime(
 //    dev_t            dev,
-//    CFAbsoluteTime   time)                                     
+//    CFAbsoluteTime   time)
 //    __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_6_0);
 
 //    /*
@@ -376,7 +376,7 @@ public extension EonilFSEventStream {
 //    extern Boolean
 //    FSEventsPurgeEventsForDeviceUpToEventId(
 //    dev_t                  dev,
-//    FSEventStreamEventId   eventId)                            
+//    FSEventStreamEventId   eventId)
 //    __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_6_0);
 }
 
