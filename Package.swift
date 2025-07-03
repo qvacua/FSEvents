@@ -16,6 +16,6 @@ let package = Package(
   ],
   targets: [
     .target(name: "EonilFSEvents", dependencies: []),
-    .target(name: "EonilFSEventsDemoCLI", dependencies: ["EonilFSEvents"]),
+    .executableTarget(name: "EonilFSEventsDemoCLI", dependencies: ["EonilFSEvents"]),
   ]
 )
