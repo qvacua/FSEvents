@@ -1,0 +1,10 @@
+--swiftversion 5.9
+
+--exclude Carthage,third-party,**/*.template.swift
+
+--indent 2
+--maxwidth 100
+
+--self insert
+--wraparguments before-first
+--ranges no-space
