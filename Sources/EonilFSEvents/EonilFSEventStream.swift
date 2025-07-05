@@ -515,3 +515,37 @@ extension EonilFSEventStream: CustomStringConvertible, CustomDebugStringConverti
     self.copyDescription()
   }
 }
+
+public extension EonilFSEventStream {
+  static func events(
+    pathsToWatch: [String],
+    sinceWhen: EonilFSEventsEventID = .now,
+    latency: TimeInterval = 0,
+    flags: EonilFSEventsCreateFlags = [],
+    queue: DispatchQueue = .global(qos: .background)
+  ) -> AsyncStream<EonilFSEventsEvent> {
+    AsyncStream { continuation in
+      let stream: EonilFSEventStream
+      do {
+        stream = try EonilFSEventStream(
+          pathsToWatch: pathsToWatch,
+          sinceWhen: sinceWhen,
+          latency: latency,
+          flags: flags
+        ) { event in
+          continuation.yield(event)
+        }
+        stream.setDispatchQueue(queue)
+        try stream.start()
+      } catch {
+        continuation.finish()
+        return
+      }
+
+      continuation.onTermination = { _ in
+        stream.stop()
+        stream.invalidate()
+      }
+    }
+  }
+}
