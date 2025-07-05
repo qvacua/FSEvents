@@ -175,7 +175,6 @@ public extension EonilFSEventsEventFlags {
    * A file system object was created at the specific path supplied in this event.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  @available(OSX 10.7, *)
   static var itemCreated: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemCreated)
   }
@@ -184,7 +183,6 @@ public extension EonilFSEventsEventFlags {
    * A file system object was removed at the specific path supplied in this event.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  @available(OSX 10.7, *)
   static var itemRemoved: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemRemoved)
   }
@@ -193,7 +191,6 @@ public extension EonilFSEventsEventFlags {
    * A file system object at the specific path supplied in this event had its metadata modified.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  @available(OSX 10.7, *)
   static var itemInodeMetaMod: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemInodeMetaMod)
   }
@@ -202,7 +199,6 @@ public extension EonilFSEventsEventFlags {
    * A file system object was renamed at the specific path supplied in this event.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  @available(OSX 10.7, *)
   static var itemRenamed: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemRenamed)
   }
@@ -211,7 +207,6 @@ public extension EonilFSEventsEventFlags {
    * A file system object at the specific path supplied in this event had its data modified.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  @available(OSX 10.7, *)
   static var itemModified: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemModified)
   }
@@ -220,7 +215,6 @@ public extension EonilFSEventsEventFlags {
    * A file system object at the specific path supplied in this event had its FinderInfo data modified.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  @available(OSX 10.7, *)
   static var itemFinderInfoMod: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemFinderInfoMod)
   }
@@ -229,7 +223,6 @@ public extension EonilFSEventsEventFlags {
    * A file system object at the specific path supplied in this event had its ownership changed.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  @available(OSX 10.7, *)
   static var itemChangeOwner: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemChangeOwner)
   }
@@ -238,7 +231,6 @@ public extension EonilFSEventsEventFlags {
    * A file system object at the specific path supplied in this event had its extended attributes modified.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  @available(OSX 10.7, *)
   static var itemXattrMod: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemXattrMod)
   }
@@ -247,7 +239,6 @@ public extension EonilFSEventsEventFlags {
    * The file system object at the specific path supplied in this event is a regular file.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  @available(OSX 10.7, *)
   static var itemIsFile: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemIsFile)
   }
@@ -256,7 +247,6 @@ public extension EonilFSEventsEventFlags {
    * The file system object at the specific path supplied in this event is a directory.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  @available(OSX 10.7, *)
   static var itemIsDir: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemIsDir)
   }
@@ -265,7 +255,6 @@ public extension EonilFSEventsEventFlags {
    * The file system object at the specific path supplied in this event is a symbolic link.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  @available(OSX 10.7, *)
   static var itemIsSymlink: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemIsSymlink)
   }
@@ -274,7 +263,6 @@ public extension EonilFSEventsEventFlags {
    * Indicates the event was triggered by the current process.
    * (This flag is only ever set if you specified the MarkSelf flag when creating the stream.)
    */
-  @available(OSX 10.9, *)
   static var ownEvent: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagOwnEvent)
   }
@@ -283,7 +271,6 @@ public extension EonilFSEventsEventFlags {
    * Indicates the object at the specified path supplied in this event is a hard link.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  @available(OSX 10.10, *)
   static var itemIsHardlink: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemIsHardlink)
   }
@@ -291,7 +278,6 @@ public extension EonilFSEventsEventFlags {
   /* Indicates the object at the specific path supplied in this event was the last hard link.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  @available(OSX 10.10, *)
   static var itemIsLastHardlink: EonilFSEventsEventFlags {
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemIsLastHardlink)
   }

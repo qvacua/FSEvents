@@ -45,8 +45,6 @@ public extension EonilFSEventsEventID {
    *    CarbonLib:        not available
    *    Non-Carbon CFM:   not available
    */
-  @available(macOS, introduced: 10.5)
-  @available(iOS, introduced: 6.0)
   static func getCurrentEventId() -> EonilFSEventsEventID {
     let eventId = FSEventsGetCurrentEventId()
     return EonilFSEventsEventID(rawValue: eventId)

@@ -205,8 +205,6 @@ public extension EonilFSEventStream {
    *    Non-Carbon CFM:   not available
    */
 
-  @available(macOS, introduced: 10.5)
-  @available(iOS, introduced: 6.0)
   func getLatestEventID() -> EonilFSEventsEventID {
     let eventId = FSEventStreamGetLatestEventId(rawref)
     let eventID1 = EonilFSEventsEventID(rawValue: eventId)
@@ -234,8 +232,6 @@ public extension EonilFSEventStream {
    *    CarbonLib:        not available
    *    Non-Carbon CFM:   not available
    */
-  @available(macOS, introduced: 10.5)
-  @available(iOS, introduced: 6.0)
   func copyPathsBeingWatched() -> [String] {
     let ret = FSEventStreamCopyPathsBeingWatched(rawref)
     guard let paths = ret as NSArray as? [NSString] as [String]? else {
@@ -287,7 +283,6 @@ public extension EonilFSEventStream {
    *    CarbonLib:        not available
    *    Non-Carbon CFM:   not available
    */
-  @available(OSX 10.6, *)
   func setDispatchQueue(_ q: DispatchQueue?) {
     FSEventStreamSetDispatchQueue(self.rawref, q)
   }
@@ -313,7 +308,6 @@ public extension EonilFSEventStream {
    *    CarbonLib:        not available
    *    Non-Carbon CFM:   not available
    */
-  @available(OSX 10.5, *)
   func invalidate() {
     FSEventStreamInvalidate(self.rawref)
   }
@@ -349,7 +343,6 @@ public extension EonilFSEventStream {
    *    CarbonLib:        not available
    *    Non-Carbon CFM:   not available
    */
-  @available(OSX 10.5, *)
   func start() throws {
     switch FSEventStreamStart(self.rawref) {
     case false:
@@ -385,7 +378,6 @@ public extension EonilFSEventStream {
    *    CarbonLib:        not available
    *    Non-Carbon CFM:   not available
    */
-  @available(OSX 10.5, *)
   func flushAsync() -> EonilFSEventsEventID {
     let eventId = FSEventStreamFlushAsync(rawref)
     let eventId1 = EonilFSEventsEventID(rawValue: eventId)
@@ -415,7 +407,6 @@ public extension EonilFSEventStream {
    *    CarbonLib:        not available
    *    Non-Carbon CFM:   not available
    */
-  @available(OSX 10.5, *)
   func flushSync() {
     FSEventStreamFlushSync(self.rawref)
   }
@@ -441,7 +432,6 @@ public extension EonilFSEventStream {
    *    CarbonLib:        not available
    *    Non-Carbon CFM:   not available
    */
-  @available(OSX 10.5, *)
   func stop() {
     FSEventStreamStop(self.rawref)
   }
@@ -468,7 +458,6 @@ extension EonilFSEventStream {
    *    CarbonLib:        not available
    *    Non-Carbon CFM:   not available
    */
-  @available(OSX 10.5, *)
   private func show() {
     FSEventStreamShow(self.rawref)
   }
@@ -489,7 +478,6 @@ extension EonilFSEventStream {
    *    CarbonLib:        not available
    *    Non-Carbon CFM:   not available
    */
-  @available(OSX 10.5, *)
   private func copyDescription() -> String {
     let desc = FSEventStreamCopyDescription(rawref)
     let desc1 = desc as String
@@ -511,7 +499,6 @@ extension EonilFSEventStream {
    *    CarbonLib:        not available
    *    Non-Carbon CFM:   not available
    */
-  @available(OSX 10.9, *)
   @discardableResult
   public func setExclusionPaths(_ pathsToExclude: [String]) -> Bool {
     let pathsToExclude1 = pathsToExclude as [NSString] as NSArray as CFArray

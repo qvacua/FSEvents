@@ -100,8 +100,6 @@ public extension EonilFSEventsCreateFlags {
    * because the WatchRoot feature uses a separate mechanism that is
    * unable to provide information about the responsible process.
    */
-  @available(macOS, introduced: 10.6)
-  @available(iOS, introduced: 6.0)
   static var ignoreSelf: EonilFSEventsCreateFlags {
     EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagIgnoreSelf)
   }
@@ -112,8 +110,6 @@ public extension EonilFSEventsCreateFlags {
    * only receiving directory level notifications.  Use this flag with
    * care as it will generate significantly more events than without it.
    */
-  @available(macOS, introduced: 10.7)
-  @available(iOS, introduced: 6.0)
   static var fileEvents: EonilFSEventsCreateFlags {
     EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagFileEvents)
   }
@@ -125,8 +121,6 @@ public extension EonilFSEventsCreateFlags {
    * triggered by your process. Note: this has no effect on historical events, i.e.,
    * those delivered before the HistoryDone sentinel event.
    */
-  @available(macOS, introduced: 10.9)
-  @available(iOS, introduced: 7.0)
   static var markSelf: EonilFSEventsCreateFlags {
     EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagMarkSelf)
   }
