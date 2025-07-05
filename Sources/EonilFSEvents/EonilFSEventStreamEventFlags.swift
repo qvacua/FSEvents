@@ -289,36 +289,9 @@ extension EonilFSEventsEventFlags: Hashable {
 }
 
 extension EonilFSEventsEventFlags: CustomStringConvertible, CustomDebugStringConvertible {
-//    private static func getAllFlags() -> [EonilFSEventsEventFlags] {
-//        return [
-  ////            .none,
-//            .mustScanSubDirs,
-//            .userDropped,
-//            .kernelDropped,
-//            .idsWrapped,
-//            .historyDone,
-//            .rootChanged,
-//            .mount,
-//            .unmount,
-//            .itemCreated,
-//            .itemRemoved,
-//            .itemInodeMetaMod,
-//            .itemRenamed,
-//            .itemModified,
-//            .itemFinderInfoMod,
-//            .itemChangeOwner,
-//            .itemXattrMod,
-//            .itemIsFile,
-//            .itemIsDir,
-//            .itemIsSymlink,
-//            .ownEvent,
-//            .itemIsHardlink,
-//            .itemIsLastHardlink,
-//        ]
-//    }
+
   private static func getNameMapping() -> [EonilFSEventsEventFlags: String] {
     [
-      //            .none: ".none",
       .mustScanSubDirs: ".mustScanSubDirs",
       .userDropped: ".userDropped",
       .kernelDropped: ".kernelDropped",
