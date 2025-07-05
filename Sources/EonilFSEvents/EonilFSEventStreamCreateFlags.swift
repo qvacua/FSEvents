@@ -7,7 +7,6 @@
 //
 
 import CoreServices
-import Foundation
 
 public struct EonilFSEventsCreateFlags: OptionSet, Sendable {
   public let rawValue: FSEventStreamCreateFlags

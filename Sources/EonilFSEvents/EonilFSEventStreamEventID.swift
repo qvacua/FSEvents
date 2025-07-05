@@ -7,7 +7,6 @@
 //
 
 import CoreServices
-import Foundation
 
 public struct EonilFSEventsEventID: Hashable, RawRepresentable, Sendable {
   public let rawValue: FSEventStreamEventId
