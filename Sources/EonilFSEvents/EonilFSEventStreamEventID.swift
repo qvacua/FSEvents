@@ -24,9 +24,7 @@ public func == (a: EonilFSEventsEventID, b: EonilFSEventsEventID) -> Bool {
 }
 
 public extension EonilFSEventsEventID {
-  static var now: EonilFSEventsEventID {
-    EonilFSEventsEventID(rawValue: kFSEventStreamEventIdSinceNow)
-  }
+  static let now = EonilFSEventsEventID(rawValue: kFSEventStreamEventIdSinceNow)
 
   /*
    *  FSEventsGetCurrentEventId()

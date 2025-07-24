@@ -35,9 +35,7 @@ public extension EonilFSEventsCreateFlags {
   /*
    * The default.
    */
-  static var none: EonilFSEventsCreateFlags {
-    EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagNone)
-  }
+  static let none = EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagNone)
 
   /*
    * The framework will invoke your callback function with CF types
@@ -45,9 +43,8 @@ public extension EonilFSEventsCreateFlags {
    * rather than a raw C array of raw C string pointers). See
    * FSEventStreamCallback.
    */
-  internal static var useCFTypes: EonilFSEventsCreateFlags {
+  internal static let useCFTypes =
     EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagUseCFTypes)
-  }
 
   /*
    * Affects the meaning of the latency parameter. If you specify this
@@ -66,9 +63,7 @@ public extension EonilFSEventsCreateFlags {
    * seconds. This is the default behavior and is more appropriate for
    * background, daemon or batch processing apps.
    */
-  static var noDefer: EonilFSEventsCreateFlags {
-    EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagNoDefer)
-  }
+  static let noDefer = EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagNoDefer)
 
   /*
    * Request notifications of changes along the path to the path(s)
@@ -85,9 +80,7 @@ public extension EonilFSEventsCreateFlags {
    * before creating the stream so that you have a file descriptor for
    * it and can issue an F_GETPATH fcntl() to find the current path.
    */
-  static var watchRoot: EonilFSEventsCreateFlags {
-    EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagWatchRoot)
-  }
+  static let watchRoot = EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagWatchRoot)
 
   /*
    * Don't send events that were triggered by the current process. This
@@ -99,9 +92,7 @@ public extension EonilFSEventsCreateFlags {
    * because the WatchRoot feature uses a separate mechanism that is
    * unable to provide information about the responsible process.
    */
-  static var ignoreSelf: EonilFSEventsCreateFlags {
-    EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagIgnoreSelf)
-  }
+  static let ignoreSelf = EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagIgnoreSelf)
 
   /*
    * Request file-level notifications.  Your stream will receive events
@@ -109,9 +100,7 @@ public extension EonilFSEventsCreateFlags {
    * only receiving directory level notifications.  Use this flag with
    * care as it will generate significantly more events than without it.
    */
-  static var fileEvents: EonilFSEventsCreateFlags {
-    EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagFileEvents)
-  }
+  static let fileEvents = EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagFileEvents)
 
   /*
    * Tag events that were triggered by the current process with the "OwnEvent" flag.
@@ -120,12 +109,8 @@ public extension EonilFSEventsCreateFlags {
    * triggered by your process. Note: this has no effect on historical events, i.e.,
    * those delivered before the HistoryDone sentinel event.
    */
-  static var markSelf: EonilFSEventsCreateFlags {
-    EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagMarkSelf)
-  }
+  static let markSelf = EonilFSEventsCreateFlags(rawValue: kFSEventStreamCreateFlagMarkSelf)
 }
-
-
 
 extension EonilFSEventsCreateFlags: Hashable, CustomStringConvertible,
   CustomDebugStringConvertible

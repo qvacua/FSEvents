@@ -43,9 +43,7 @@ public extension EonilFSEventsEventFlags {
    * There was some change in the directory at the specific path
    * supplied in this event.
    */
-  static var none: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagNone)
-  }
+  static let none = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagNone)
 
   /*
    * Your application must rescan not just the directory given in the
@@ -60,9 +58,8 @@ public extension EonilFSEventsEventFlags {
    * kFSEventStreamEventFlagUserDropped or
    * kFSEventStreamEventFlagKernelDropped.
    */
-  static var mustScanSubDirs: EonilFSEventsEventFlags {
+  static let mustScanSubDirs =
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagMustScanSubDirs)
-  }
 
   /*
    * The kFSEventStreamEventFlagUserDropped or
@@ -77,9 +74,7 @@ public extension EonilFSEventsEventFlags {
    * kFSEventStreamEventFlagMustScanSubDirs flag; these flags (if
    * present) only provide information to help you diagnose the problem.
    */
-  static var userDropped: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagUserDropped)
-  }
+  static let userDropped = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagUserDropped)
 
   /*
    * The kFSEventStreamEventFlagUserDropped or
@@ -94,9 +89,7 @@ public extension EonilFSEventsEventFlags {
    * kFSEventStreamEventFlagMustScanSubDirs flag; these flags (if
    * present) only provide information to help you diagnose the problem.
    */
-  static var kernelDropped: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagKernelDropped)
-  }
+  static let kernelDropped = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagKernelDropped)
 
   /*
    * If kFSEventStreamEventFlagEventIdsWrapped is set, it means the
@@ -104,9 +97,7 @@ public extension EonilFSEventsEventFlags {
    * previously-issued event ID's are no longer valid arguments for the
    * sinceWhen parameter of the FSEventStreamCreate...() functions.
    */
-  static var idsWrapped: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagEventIdsWrapped)
-  }
+  static let idsWrapped = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagEventIdsWrapped)
 
   /*
    * Denotes a sentinel event sent to mark the end of the "historical"
@@ -119,9 +110,7 @@ public extension EonilFSEventsEventFlags {
    * kFSEventStreamEventFlagHistoryDone flag is set. The client should
    * ignore the path supplied in this callback.
    */
-  static var historyDone: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagHistoryDone)
-  }
+  static let historyDone = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagHistoryDone)
 
   /*
    * Denotes a special event sent when there is a change to one of the
@@ -134,9 +123,7 @@ public extension EonilFSEventsEventFlags {
    * kFSEventStreamCreateFlagWatchRoot to FSEventStreamCreate...() when
    * you created the stream.
    */
-  static var rootChanged: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagRootChanged)
-  }
+  static let rootChanged = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagRootChanged)
 
   /*
    * Denotes a special event sent when a volume is mounted underneath
@@ -151,9 +138,7 @@ public extension EonilFSEventsEventFlags {
    * aware of the MNT_DONTBROWSE flag that is set for volumes which
    * should not be displayed by user interface elements.
    */
-  static var mount: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagMount)
-  }
+  static let mount = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagMount)
 
   /*
    * Denotes a special event sent when a volume is unmounted underneath
@@ -166,120 +151,95 @@ public extension EonilFSEventsEventFlags {
    * unmounting a volume could uncover an arbitrarily large directory
    * hierarchy, although Mac OS X never does that.
    */
-  static var unmount: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagUnmount)
-  }
+  static let unmount = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagUnmount)
 
   /*
    * A file system object was created at the specific path supplied in this event.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  static var itemCreated: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemCreated)
-  }
+  static let itemCreated = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemCreated)
 
   /*
    * A file system object was removed at the specific path supplied in this event.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  static var itemRemoved: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemRemoved)
-  }
+  static let itemRemoved = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemRemoved)
 
   /*
    * A file system object at the specific path supplied in this event had its metadata modified.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  static var itemInodeMetaMod: EonilFSEventsEventFlags {
+  static let itemInodeMetaMod =
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemInodeMetaMod)
-  }
 
   /*
    * A file system object was renamed at the specific path supplied in this event.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  static var itemRenamed: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemRenamed)
-  }
+  static let itemRenamed = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemRenamed)
 
   /*
    * A file system object at the specific path supplied in this event had its data modified.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  static var itemModified: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemModified)
-  }
+  static let itemModified = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemModified)
 
   /*
    * A file system object at the specific path supplied in this event had its FinderInfo data modified.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  static var itemFinderInfoMod: EonilFSEventsEventFlags {
+  static let itemFinderInfoMod =
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemFinderInfoMod)
-  }
 
   /*
    * A file system object at the specific path supplied in this event had its ownership changed.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  static var itemChangeOwner: EonilFSEventsEventFlags {
+  static let itemChangeOwner =
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemChangeOwner)
-  }
 
   /*
    * A file system object at the specific path supplied in this event had its extended attributes modified.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  static var itemXattrMod: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemXattrMod)
-  }
+  static let itemXattrMod = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemXattrMod)
 
   /*
    * The file system object at the specific path supplied in this event is a regular file.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  static var itemIsFile: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemIsFile)
-  }
+  static let itemIsFile = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemIsFile)
 
   /*
    * The file system object at the specific path supplied in this event is a directory.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  static var itemIsDir: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemIsDir)
-  }
+  static let itemIsDir = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemIsDir)
 
   /*
    * The file system object at the specific path supplied in this event is a symbolic link.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  static var itemIsSymlink: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemIsSymlink)
-  }
+  static let itemIsSymlink = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemIsSymlink)
 
   /*
    * Indicates the event was triggered by the current process.
    * (This flag is only ever set if you specified the MarkSelf flag when creating the stream.)
    */
-  static var ownEvent: EonilFSEventsEventFlags {
-    EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagOwnEvent)
-  }
+  static let ownEvent = EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagOwnEvent)
 
   /*
    * Indicates the object at the specified path supplied in this event is a hard link.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  static var itemIsHardlink: EonilFSEventsEventFlags {
+  static let itemIsHardlink =
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemIsHardlink)
-  }
 
   /* Indicates the object at the specific path supplied in this event was the last hard link.
    * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
    */
-  static var itemIsLastHardlink: EonilFSEventsEventFlags {
+  static let itemIsLastHardlink =
     EonilFSEventsEventFlags(rawValue: kFSEventStreamEventFlagItemIsLastHardlink)
-  }
 }
 
 extension EonilFSEventsEventFlags: Hashable {
@@ -289,7 +249,6 @@ extension EonilFSEventsEventFlags: Hashable {
 }
 
 extension EonilFSEventsEventFlags: CustomStringConvertible, CustomDebugStringConvertible {
-
   private static func getNameMapping() -> [EonilFSEventsEventFlags: String] {
     [
       .mustScanSubDirs: ".mustScanSubDirs",
